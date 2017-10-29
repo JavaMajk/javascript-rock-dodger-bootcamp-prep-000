@@ -93,6 +93,8 @@ function endGame() {
   window.removeEventListener('keydown', moveDodger)
 
   alert('YOU LOSE!')
+
+  START.innerHTML = 'Restart'
 }
 
 function moveDodger(e) {
