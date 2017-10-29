@@ -94,8 +94,8 @@ function endGame() {
 
   alert('YOU LOSE!')
 
-  START.innerHTML = 'Restart'
-  START.style.display = 'inline'
+  //START.innerHTML = 'Restart'
+  //START.style.display = 'inline'
 }
 
 function moveDodger(e) {
@@ -162,5 +162,5 @@ function start() {
 
   gameInterval = setInterval(function() {
     createRock(Math.floor(Math.random() *  (GAME_WIDTH - 20)))
-  }, 3000)
+  }, 1000)
 }
