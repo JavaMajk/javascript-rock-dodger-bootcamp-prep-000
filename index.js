@@ -91,7 +91,7 @@ function endGame() {
   }
 }
 
-window.removeEventListener('keydown', moveDodger)
+document.removeEventListener('keydown', moveDodger)
 
 function moveDodger(e) {
   // implement me!
