@@ -89,9 +89,9 @@ function endGame() {
     //rock.remove()
     ROCKS[i].remove()
   }
-}
 
-document.removeEventListener('keydown', moveDodger)
+  window.removeEventListener('keydown', moveDodger)
+}
 
 function moveDodger(e) {
   // implement me!
