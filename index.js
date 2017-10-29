@@ -94,6 +94,7 @@ function endGame() {
 
   alert('YOU LOSE!')
 
+  START.innerHTML = 'Restart'
   START.style.display = 'none'
 }
 
