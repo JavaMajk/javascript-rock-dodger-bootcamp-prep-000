@@ -94,8 +94,7 @@ function endGame() {
 
   alert('YOU LOSE!')
 
-  START.innerHTML = 'Restart'
-  START.style.display = 'inline'
+  START.style.display = 'none'
 }
 
 function moveDodger(e) {
