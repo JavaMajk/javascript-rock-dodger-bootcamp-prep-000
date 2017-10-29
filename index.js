@@ -36,18 +36,20 @@ function createRock(x) {
 
   // Hmmm, why would we have used `var` here?
   var top = 0
+
   rock.style.top = top
   /**
    * Now that we have a rock, we'll need to append
    * it to GAME and move it downwards.
    */
    GAME.appendChild(rock)
+   console.log(ROCKS)
   /**
    * This function moves the rock. (2 pixels at a time
    * seems like a good pace.)
    */
   function moveRock() {
-    dodger.style.top = `${top + 2}px`
+    rock.style.top = `${top += 2}px`
     /**
      * If a rock collides with the DODGER,
      * we should call endGame()
@@ -59,18 +61,17 @@ function createRock(x) {
        window.requestAnimationFrame(moveRock)
      }
      else if(top < GAME_HEIGHT) {
-       rock.empty()
+       rock.remove()
      }
   }
   // We should kick of the animation of the rock around here
-window.requestAnimationFrame(moveRock)
+  window.requestAnimationFrame(moveRock)
   // Add the rock to ROCKS so that we can remove all rocks
   // when there's a collision
   ROCKS.push(rock)
   // Finally, return the rock element you've created
   return rock
 }
-
 /**
  * End the game by clearing `gameInterval`,
  * removing all ROCKS from the DOM,
@@ -78,6 +79,16 @@ window.requestAnimationFrame(moveRock)
  * Finally, alert "YOU LOSE!" to the player.
  */
 function endGame() {
+  clearInterval(gameInterval)
+//  ROCKS.forEach(function(rock){
+//    rock.remove()
+//  })
+
+  for (let i=0; i<ROCKS.length; i++) {
+    //let rock = ROCKS[i]
+    //rock.remove()
+    ROCKS[i].remove()
+  }
 }
 
 function moveDodger(e) {
@@ -122,5 +133,5 @@ function start() {
 
   gameInterval = setInterval(function() {
     createRock(Math.floor(Math.random() *  (GAME_WIDTH - 20)))
-  }, 1000)
+  }, 3000)
 }
