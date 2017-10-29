@@ -92,7 +92,7 @@ function endGame() {
 
   window.removeEventListener('keydown', moveDodger)
 
-  alert('YOU LOSE!')
+  //alert('YOU LOSE!')
 
   //START.innerHTML = 'Restart'
   //START.style.display = 'inline'
